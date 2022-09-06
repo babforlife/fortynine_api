@@ -4,22 +4,22 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "partie_joueur")
-public class PartieJoueur {
+@Table(name = "game_player")
+public class GamePlayer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="id_partie")
-    private Partie partie;
+    @JoinColumn(name = "id_game")
+    private Game game;
 
     @ManyToOne
-    @JoinColumn(name="id_joueur")
-    private Joueur joueur;
+    @JoinColumn(name = "id_player")
+    private Player player;
 
-    @OneToMany(mappedBy = "partieJoueur")
+    @OneToMany(mappedBy = "gamePlayer")
     private List<Points> points;
 
     public Long getId() {
@@ -30,20 +30,20 @@ public class PartieJoueur {
         this.id = id;
     }
 
-    public Partie getPartie() {
-        return partie;
+    public Game getGame() {
+        return game;
     }
 
-    public void setPartie(Partie partie) {
-        this.partie = partie;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
-    public Joueur getJoueur() {
-        return joueur;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setJoueur(Joueur joueur) {
-        this.joueur = joueur;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
     public List<Points> getPoints() {

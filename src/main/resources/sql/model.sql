@@ -1,29 +1,29 @@
-CREATE TABLE `joueur` (
+CREATE TABLE `player` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `partie` (
+CREATE TABLE `game` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `partie_joueur` (
+CREATE TABLE `game_player` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_partie` bigint(20) DEFAULT NULL,
-  `id_joueur` bigint(20) DEFAULT NULL,
+  `id_game` bigint(20) DEFAULT NULL,
+  `id_player` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_partie` (`id_partie`),
-  KEY `id_joueur` (`id_joueur`)
+  KEY `id_game` (`id_game`),
+  KEY `id_player` (`id_player`)
 );
 
 CREATE TABLE `points` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_partie_joueur` bigint(20) DEFAULT NULL,
+  `id_game_player` bigint(20) DEFAULT NULL,
   `point` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `id_partie_joueur` (`id_partie_joueur`)
+  KEY `id_game_player` (`id_game_player`)
 );
 
 CREATE TABLE `attribute` (

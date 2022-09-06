@@ -13,7 +13,7 @@ public class Attribute {
     private String name;
     private Boolean stay;
     @OneToMany(mappedBy = "attribute")
-    private List<Carte> cartes;
+    private List<Card> cards;
 
     public Long getId() {
         return id;
@@ -39,11 +39,11 @@ public class Attribute {
         this.stay = stay;
     }
 
-    public List<Carte> getCartes() {
-        return cartes;
+    public List<Card> getCartes() {
+        return cards;
     }
 
-    public void setCartes(List<Carte> cartes) {
-        this.cartes = cartes;
+    public void setCartes(List<Card> cards) {
+        this.cards = cards;
     }
 }

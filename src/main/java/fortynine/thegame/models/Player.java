@@ -5,16 +5,16 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "joueur")
-public class Joueur {
+@Table(name = "player")
+public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "joueur")
-    private List<PartieJoueur> partieJoueurs;
+    @OneToMany(mappedBy = "player")
+    private List<GamePlayer> gamePlayers;
 
     public Long getId() {
         return id;
@@ -32,11 +32,11 @@ public class Joueur {
         this.name = name;
     }
 
-    public List<PartieJoueur> getPartieJoueurs() {
-        return partieJoueurs;
+    public List<GamePlayer> getGamePlayers() {
+        return gamePlayers;
     }
 
-    public void setPartieJoueurs(List<PartieJoueur> partieJoueurs) {
-        this.partieJoueurs = partieJoueurs;
+    public void setGamePlayers(List<GamePlayer> gamePlayers) {
+        this.gamePlayers = gamePlayers;
     }
 }

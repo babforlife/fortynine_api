@@ -5,14 +5,14 @@ import javax.persistence.*;
 @Entity
 @Table(name = "points")
 public class Points {
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	@ManyToOne
-	@JoinColumn(name="id_partie_joueur")
-    private PartieJoueur partieJoueur;
+	@JoinColumn(name = "id_game_player")
+	private GamePlayer gamePlayer;
 
 	private Integer point;
 
@@ -32,11 +32,11 @@ public class Points {
 		this.point = point;
 	}
 
-	public PartieJoueur getPartieJoueur() {
-		return partieJoueur;
+	public GamePlayer getGamePlayer() {
+		return gamePlayer;
 	}
 
-	public void setPartieJoueur(PartieJoueur partieJoueur) {
-		this.partieJoueur = partieJoueur;
+	public void setGamePlayer(GamePlayer gamePlayer) {
+		this.gamePlayer = gamePlayer;
 	}
 }

@@ -1,7 +1,7 @@
 package fortynine.thegame.controller;
 
-import fortynine.thegame.models.Carte;
-import fortynine.thegame.repository.CarteR;
+import fortynine.thegame.models.Card;
+import fortynine.thegame.repository.CardR;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,20 +13,20 @@ import java.util.List;
 
 @Controller
 @RequestMapping(value = "/carte")
-public class CarteC {
+public class CardC {
 
     @Autowired
-    private CarteR repository;
+    private CardR repository;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Carte> getById(@PathVariable long id) {
-        Carte carte = repository.findById(id).orElse(null);
+    public ResponseEntity<Card> getById(@PathVariable long id) {
+        Card card = repository.findById(id).orElse(null);
         return null;
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Carte>> getAll() {
-        List<Carte> cartes = repository.findAll();
+    public ResponseEntity<List<Card>> getAll() {
+        List<Card> cards = repository.findAll();
         return null;
     }
 
