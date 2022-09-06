@@ -11,7 +11,6 @@ public class Partie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Integer number;
 
     @OneToMany(mappedBy = "partie")
     private List<PartieJoueur> partieJoueurs;
@@ -22,14 +21,6 @@ public class Partie {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getNumber() {
-        return number;
-    }
-
-    public void setNumber(Integer number) {
-        this.number = number;
     }
 
     public List<PartieJoueur> getPartieJoueurs() {
